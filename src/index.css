@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Grocery palette - Fresh & Organic */
+    --background: 60 23% 95%; /* #F5F5EC - soft off-white */
+    --foreground: 234 14% 42%; /* #595C7A - dark gray for text */
+
+    --card: 50 67% 98%; /* #FDFBF5 - pale cream */
+    --card-foreground: 234 14% 42%; /* #595C7A - dark gray for text */
+
+    --popover: 50 67% 98%; /* #FDFBF5 - pale cream */
+    --popover-foreground: 234 14% 42%; /* #595C7A - dark gray for text */
+
+    --primary: 135 46% 16%; /* #274730 - deep brand green */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --secondary: 103 43% 84%; /* #D2E8C4 - soft veggie green */
+    --secondary-foreground: 135 46% 16%; /* #274730 - deep brand green */
+
+    --muted: 103 56% 68%; /* #92D784 - mid green */
+    --muted-foreground: 234 14% 42%; /* #595C7A - dark gray for text */
+
+    --accent: 133 47% 40%; /* #349744 - fresh leaf green */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --destructive: 356 66% 46%; /* #C52836 - tomato red */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --border: 0 0% 90%; /* #E6E6E6 */
+    --input: 0 0% 90%; /* #E6E6E6 */
+    --ring: 135 46% 16%; /* #274730 - deep brand green */
+
+    --radius: 0.75rem;
+
+    /* Category accent colors */
+    --fruit-accent: 6 67% 84%; /* #F4C0BA - soft peach */
+    --bakery-accent: 52 84% 74%; /* #F4E086 - warm yellow */
+    --veggie-accent: 103 56% 68%; /* #92D784 - green */
+    --dairy-accent: 50 67% 98%; /* #FDFBF5 - cream */
+    
+    /* Gradient */
+    --hero-gradient: linear-gradient(135deg, hsl(135, 46%, 16%) /* #274730 */ 0%, hsl(60, 23%, 95%) /* #F5F5EC */ 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08);
+    
+    /* Transitions */
+    --transition-base: all 0.2s ease;
+  }
+
+  .dark {
+    --background: 135 46% 16%; /* #274730 - deep brand green */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+
+    --card: 135 46% 20%; /* #1C4A27 */
+    --card-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --popover: 135 46% 20%; /* #1C4A27 */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --primary: 103 56% 68%; /* #92D784 - mid green */
+    --primary-foreground: 135 46% 16%; /* #274730 - deep brand green */
+
+    --secondary: 135 46% 24%; /* #21592F */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --muted: 135 46% 24%; /* #21592F */
+    --muted-foreground: 0 0% 70%; /* #B3B3B3 */
+
+    --accent: 133 47% 40%; /* #349744 - fresh leaf green */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --destructive: 356 66% 46%; /* #C52836 - tomato red */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --border: 135 46% 28%; /* #276837 */
+    --input: 135 46% 28%; /* #276837 */
+    --ring: 103 56% 68%; /* #92D784 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
