@@ -94,9 +94,10 @@ const Hero = () => {
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {latestProducts.map((product) => (
-                  <div
+                  <Link
                     key={product.id}
-                    className="group min-w-[160px] xs:min-w-[180px] sm:min-w-[220px] md:min-w-[260px] snap-start rounded-xl bg-card p-2 xs:p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:cursor-pointer hover:rounded-lg"
+                    to={`/products?category=${encodeURIComponent(product.category)}`}
+                    className="group min-w-[160px] xs:min-w-[180px] sm:min-w-[220px] md:min-w-[260px] snap-start rounded-xl bg-card p-2 xs:p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:rounded-lg"
                   >
                     <div className="aspect-square overflow-hidden rounded-lg mb-3">
                       <img
@@ -112,12 +113,12 @@ const Hero = () => {
                       <h3 className="font-semibold text-xs xs:text-sm sm:text-base text-card-foreground transition-colors duration-300 line-clamp-1">{product.name}</h3>
                       <div className="flex items-center justify-between">
                         <span className="text-sm xs:text-base sm:text-lg font-bold text-primary transition-all duration-300 ">{product.price}</span>
-                        <Button size="icon" variant="accent" className="rounded-full h-7 w-7 xs:h-8 xs:w-8 sm:h-10 sm:w-10 group/btn">
+                        <Button size="icon" variant="accent" className="rounded-full h-7 w-7 xs:h-8 xs:w-8 sm:h-10 sm:w-10 group/btn" onClick={(e) => e.preventDefault()}>
                           <Plus className="h-3 w-3 xs:h-3.5 xs:w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover/btn:rotate-90" />
                         </Button>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
 
